@@ -1,0 +1,9 @@
+.idea
+.allure/
+build/
+/target/
+out
+*.iml
+*.yml
+.jar
+*.exe
