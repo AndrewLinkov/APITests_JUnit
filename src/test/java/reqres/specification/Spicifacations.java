@@ -43,8 +43,6 @@ public class Spicifacations {
                 .build();
     }
 
-
-
     public static void installSpecification(RequestSpecification request, ResponseSpecification response) {
         RestAssured.requestSpecification = request;
         RestAssured.responseSpecification = response;
