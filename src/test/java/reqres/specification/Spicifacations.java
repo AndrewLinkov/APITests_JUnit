@@ -36,6 +36,15 @@ public class Spicifacations {
                 .build();
     }
 
+    //Спецификация для ТК4
+    public static ResponseSpecification responseSpecUnique(int status) {
+        return new ResponseSpecBuilder()
+                .expectStatusCode(status)
+                .build();
+    }
+
+
+
     public static void installSpecification(RequestSpecification request, ResponseSpecification response) {
         RestAssured.requestSpecification = request;
         RestAssured.responseSpecification = response;

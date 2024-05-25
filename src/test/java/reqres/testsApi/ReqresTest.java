@@ -96,11 +96,11 @@ public class ReqresTest {
     }
 
     @Test
-    @DisplayName("Реализация ТК3")
+    @DisplayName("Реализация ТК 3")
     public void sortedYearsTest() {
         Spicifacations.installSpecification(Spicifacations.requestSpec(URL), Spicifacations.responseSpecOK200());
         //Нужно получить список
-        List<ColorsData>  colors = given()
+        List<ColorsData> colors = given()
                 .when()
                 .get("api/unknown")
                 .then().log().all()
@@ -114,5 +114,15 @@ public class ReqresTest {
         //Проверка параметров выводом на консоль
         System.out.println(years);
         System.out.println(sortedYears);
+    }
+
+    @Test
+    @DisplayName("Реализация ТК 4")
+    public void deleteUserTest() {
+        Spicifacations.installSpecification(Spicifacations.requestSpec(URL), Spicifacations.responseSpecUnique(204));
+        given()
+                .when()
+                .delete("api/users/2")
+                .then().log().all();
     }
 }
