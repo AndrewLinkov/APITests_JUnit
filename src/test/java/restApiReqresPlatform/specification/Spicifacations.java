@@ -1,4 +1,4 @@
-package reqres.dataClasses.specification;
+package restApiReqresPlatform.specification;
 
 import io.restassured.RestAssured;
 import io.restassured.builder.RequestSpecBuilder;

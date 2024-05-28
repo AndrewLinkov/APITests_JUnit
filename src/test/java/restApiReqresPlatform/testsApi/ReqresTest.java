@@ -1,14 +1,14 @@
-package reqres.testsApi;
+package restApiReqresPlatform.testsApi;
 
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.jupiter.api.DisplayName;
-import reqres.data.Register;
-import reqres.data.SuccessReg;
-import reqres.data.UnSuccessReg;
-import reqres.data.UserData;
-import reqres.dataClasses.ColorsData;
-import reqres.dataClasses.specification.Spicifacations;
+import restApiReqresPlatform.data.Register;
+import restApiReqresPlatform.data.SuccessReg;
+import restApiReqresPlatform.data.UnSuccessReg;
+import restApiReqresPlatform.data.UserData;
+import restApiReqresPlatform.dataClasses.ColorsData;
+import restApiReqresPlatform.specification.Spicifacations;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -17,7 +17,7 @@ import static io.restassured.RestAssured.given;
 
 
 public class ReqresTest {
-    private static String URL = "https://reqres.in/";
+    private static final String URL = "https://reqres.in/";
 
     @Test
     @DisplayName("Реализация ТК 1")

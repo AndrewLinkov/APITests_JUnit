@@ -1,4 +1,4 @@
-package reqres.data;
+package restApiReqresPlatform.data;
 
 public class UnSuccessReg {
     private String error= "error";

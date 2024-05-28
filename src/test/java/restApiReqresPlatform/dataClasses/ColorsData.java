@@ -1,4 +1,4 @@
-package reqres.dataClasses;
+package restApiReqresPlatform.dataClasses;
 
 public class ColorsData {
     private Integer id;
