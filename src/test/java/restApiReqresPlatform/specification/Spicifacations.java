@@ -7,7 +7,6 @@ import io.restassured.http.ContentType;
 import io.restassured.specification.RequestSpecification;
 import io.restassured.specification.ResponseSpecification;
 
-
 public class Spicifacations {
     //Спецификация для запроса
     //Метод позволяет не прописать заново путь (базовый URL) и тип ответа (Json)

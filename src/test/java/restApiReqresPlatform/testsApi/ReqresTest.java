@@ -1,8 +1,8 @@
 package restApiReqresPlatform.testsApi;
 
 import org.junit.Assert;
-import org.junit.Test;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
 import restApiReqresPlatform.data.Register;
 import restApiReqresPlatform.data.SuccessReg;
 import restApiReqresPlatform.data.UnSuccessReg;
@@ -14,8 +14,6 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import static io.restassured.RestAssured.given;
-
-
 public class ReqresTest {
     private static final String URL = "https://reqres.in/";
 
@@ -27,7 +25,6 @@ public class ReqresTest {
                 //ключевое слово когда
                 .when()
                 //Указываем эндпоинт куда надо отправить запрос
-                //Может быть указан любой метод PUT, DELETE и т.д.
                 .get("api/users?page=2")
                 //ключевое слово где
                 //вытащить логи (все)
@@ -36,18 +33,9 @@ public class ReqresTest {
                 //извлечь тело, в формате Json, списком. В скобках выбираем корень массива data и указать класс куда извлекаем
                 .extract().body().jsonPath().getList("data", UserData.class);
 
-        //Вар. 1
-        //Проверка по ТК 1.1
-        //в метоже forEach происходит cравнение, что поле с аватаром содержит ID
-        //users.forEach(x -> Assert.assertTrue(x.getAvatar().contains(x.getId().toString())));
-        //Проверка по ТК 1.2
-        //Через стрим вызываем метод allMatch, где все совпадения по имейл: @reqres.in
-        //Assert.assertTrue(users.stream().allMatch(x -> x.getEmail().endsWith("@reqres.in")));
-
-        //Вар. 2. Проверить списки на наличие по avatar и ID.
-        //Проверка по ТК 1.1
+        //Убедиться что имена файлов-аватаров пользоваталей совпадают;
         List<String> avatars = users.stream().map(UserData::getAvatar).collect(Collectors.toList());
-        //Проверка по ТК 1.2
+        //Убедиться, что email пользователей имеет окончание reqres.in;
         List<String> ids = users.stream().map(x -> x.getId().toString()).collect(Collectors.toList());
         //Перебеираем списки
         for (int i = 0; i < avatars.size(); i++) {
